@@ -181,3 +181,12 @@ section[id] { scroll-margin-top: 8px; }
 @media (max-width: 599px) { .s-photo img { aspect-ratio: 4 / 3; } }
 .s-nowrap { white-space: nowrap; }
 .s-photo figcaption { padding: var(--space-2) var(--space-3); font-family: var(--font-mono); font-size: var(--text-small); color: var(--color-text-muted); background: var(--color-bg); }
+
+/* Desktop: photo beside the interest tiles instead of full width */
+@media (min-width: 900px) {
+  .s-beyond { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-3); align-items: stretch; }
+  .s-beyond .s-photo { margin: 0; display: flex; flex-direction: column; }
+  .s-beyond .s-photo picture { position: relative; display: block; flex: 1; min-height: 280px; }
+  .s-beyond .s-photo img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: 60% 50%; }
+  .s-beyond .s-interests { grid-template-columns: repeat(2, 1fr); }
+}
