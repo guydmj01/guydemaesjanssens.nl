@@ -1,0 +1,70 @@
+/* Page layout for the resume homepage. Tokens only: no new colours, radii or shadows.
+   Prefix s- = this site. Loaded after the design system and templates.css. */
+
+.g-lead { font-size: var(--text-lead); line-height: 1.5; }
+.g-hero .g-link svg { transition: transform var(--duration-base) var(--ease-calm); }
+.g-hero .g-link:hover svg { transform: translateY(3px); }
+#main { scroll-margin-top: 0; }
+section[id] { scroll-margin-top: 8px; }
+
+/* Theme toggle + menu icon swap */
+.s-icon-dark, .s-menu-close { display: none; }
+:root[data-theme="dark"] .s-icon-light { display: none; }
+:root[data-theme="dark"] .s-icon-dark { display: contents; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .s-icon-light { display: none; }
+  :root:not([data-theme="light"]) .s-icon-dark { display: contents; }
+}
+.s-icon-light, .s-menu-open { display: contents; }
+.g-header--open .s-menu-open { display: none; }
+.g-header--open .s-menu-close { display: contents; }
+
+/* Role */
+.s-role { display: grid; gap: var(--space-5) var(--grid-gap); }
+.s-role__head { display: flex; flex-direction: column; gap: var(--space-2); }
+.s-role__period { margin: 0; font-family: var(--font-mono); font-size: var(--text-small); color: var(--color-text-muted); }
+.s-role__title { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--text-h3); line-height: 1.2; letter-spacing: var(--tracking-heading); text-wrap: balance; }
+.s-role__org { margin: var(--space-1) 0 0; color: var(--color-text-muted); }
+.s-role__body { display: flex; flex-direction: column; gap: var(--space-7); min-width: 0; }
+.s-role__lead { margin: 0; max-width: 40ch; font-size: var(--text-lead); line-height: 1.5; text-wrap: pretty; }
+@media (min-width: 900px) {
+  .s-role { grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); }
+  .s-role__head { position: sticky; top: var(--space-6); align-self: start; }
+}
+
+/* Responsibility areas: hairline-separated list, two columns on desktop */
+.s-areas { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 var(--grid-gap); }
+.s-areas li { border-top: 1px solid var(--color-border); padding-block: var(--space-5) var(--space-6); }
+.s-areas p { margin: var(--space-2) 0 0; text-wrap: pretty; }
+.s-areas__title { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--text-h4); line-height: 1.3; }
+@media (min-width: 900px) { .s-areas { grid-template-columns: 1fr 1fr; } }
+
+/* Achievements */
+.s-achievements { padding: clamp(24px, 3vw, 40px); background: var(--color-bg); border-radius: var(--radius-lg); }
+.s-achievements__title { margin: 0 0 var(--space-4); font-weight: var(--weight-regular); }
+.s-dash-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--space-3); }
+.s-dash-list li { position: relative; padding-left: 28px; max-width: 64ch; text-wrap: pretty; }
+.s-dash-list li::before { content: ""; position: absolute; left: 0; top: 0.78em; width: 16px; height: var(--stroke-route); border-radius: 2px; background: var(--color-accent-decor); }
+
+/* Skills */
+.s-skills { margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-border); }
+.s-skills__title { margin: 0 0 var(--space-4); font-weight: var(--weight-regular); }
+.s-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.s-tags .g-tag { white-space: normal; }
+
+/* About */
+.s-about { display: flex; flex-direction: column; gap: var(--space-4); max-width: var(--measure); }
+.s-about > p { margin: 0; text-wrap: pretty; }
+.s-about__lead { margin: 0; }
+.s-about__h { margin: var(--space-6) 0 0; font-weight: var(--weight-regular); }
+.s-values { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.s-values li { border-top: 1px solid var(--color-border); padding-block: var(--space-4); }
+.s-values li:last-child { border-bottom: 1px solid var(--color-border); }
+.s-values__title { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--text-h4); line-height: 1.3; }
+.s-values p { margin: var(--space-1) 0 0; color: var(--color-text-muted); }
+.s-portrait { aspect-ratio: 1 / 1; max-width: 360px; }
+.t-section--surface .s-facts { background: var(--color-bg); }
+@media (max-width: 899px) { .s-portrait { display: none; } }
+
+/* Contact: section after a surface band sits on paper so the two don't merge */
+.s-contact { background: var(--color-bg); border-top: 1px solid var(--color-border); }
