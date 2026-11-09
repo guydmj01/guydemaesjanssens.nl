@@ -1,4 +1,4 @@
-// Mobile menu, theme toggle and the services route animation. The page works without this file.
+// Mobile menu, theme toggle, term tooltips, photo gallery and the services route animation. The page works without this file.
 (function () {
   var root = document.documentElement;
   var L = root.lang === 'nl'
@@ -78,6 +78,40 @@
     var open = document.querySelector('.s-term.is-open, .s-term:focus-within');
     closeAll();
     if (open && document.activeElement && open.contains(document.activeElement)) document.activeElement.blur();
+  });
+
+  // Photo gallery: prev/next buttons and a counter on top of a native swipeable strip.
+  document.querySelectorAll('[data-gallery]').forEach(function (g) {
+    var track = g.querySelector('.s-gallery__track');
+    var slides = track.children;
+    var nav = g.querySelector('.s-gallery__nav');
+    var prev = g.querySelector('[data-gallery-prev]');
+    var next = g.querySelector('[data-gallery-next]');
+    var out = g.querySelector('[data-gallery-index]');
+    var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function index() { return Math.round(track.scrollLeft / Math.max(1, track.clientWidth)); }
+    function update() {
+      var i = index();
+      out.textContent = i + 1;
+      prev.disabled = i <= 0;
+      next.disabled = i >= slides.length - 1;
+    }
+    function go(step) {
+      var i = Math.min(slides.length - 1, Math.max(0, index() + step));
+      track.scrollTo({ left: i * track.clientWidth, behavior: smooth ? 'smooth' : 'auto' });
+    }
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+    });
+    var t;
+    track.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(update, 60); }, { passive: true });
+    window.addEventListener('resize', update);
+    nav.hidden = false;
+    g.classList.add('is-ready');
+    update();
   });
 
   // Services route: draw the clay line once when it scrolls into view.

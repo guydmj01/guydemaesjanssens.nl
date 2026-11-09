@@ -126,19 +126,47 @@
       <div class="g-section-heading__text">
         <p class="g-label g-section-heading__eyebrow">Naast het werk</p>
         <h2 id="h-beyond" class="g-section-heading__title">Buiten, meestal</h2>
-        <p class="g-section-heading__intro">Ik woon in Rotterdam met mijn vrouw en onze hond. Competitief, en graag in beweging.</p>
+        <p class="g-section-heading__intro">Ik woon in Rotterdam met mijn vrouw en onze hond Loki. Competitief, en graag in beweging.</p>
       </div>
     </div>
     <div class="s-beyond">
-    <figure class="s-photo">
-      <picture>
-        <source media="(max-width: 599px), (min-width: 900px)" type="image/webp" srcset="/img/buiten-800x600.webp">
-        <source media="(max-width: 599px), (min-width: 900px)" srcset="/img/buiten-800x600.jpg">
-        <source type="image/webp" srcset="/img/buiten-960.webp 960w, /img/buiten-1600.webp 1600w" sizes="100vw">
-        <img src="/img/buiten-960.jpg" srcset="/img/buiten-960.jpg 960w, /img/buiten-1600.jpg 1600w" sizes="100vw" width="1600" height="900" alt="Guy met onze hond op een rotsige bergtop op het Isle of Arran, met zee en wolken op de achtergrond" loading="lazy" decoding="async">
-      </picture>
-      <figcaption>Isle of Arran, Schotland</figcaption>
-    </figure>
+    <div class="s-gallery" data-gallery role="region" aria-roledescription="carousel" aria-label="Foto's">
+      <div class="s-gallery__track" tabindex="0">
+        <figure class="s-gallery__slide" role="group" aria-roledescription="slide" aria-label="1 van 4">
+          <picture>
+            <source type="image/webp" srcset="/img/arran-480.webp 480w, /img/arran-800.webp 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw">
+            <img src="/img/arran-800.jpg" srcset="/img/arran-480.jpg 480w, /img/arran-800.jpg 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw" width="800" height="1000" alt="Guy met Loki, onze hond, op een rotsige bergtop op het Isle of Arran, met zee en wolken op de achtergrond" loading="eager" decoding="async" style="object-position: 50% 50%">
+          </picture>
+          <figcaption>Met Loki op het Isle of Arran, Schotland</figcaption>
+        </figure>
+        <figure class="s-gallery__slide" role="group" aria-roledescription="slide" aria-label="2 van 4">
+          <picture>
+            <source type="image/webp" srcset="/img/mountainbike-480.webp 480w, /img/mountainbike-800.webp 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw">
+            <img src="/img/mountainbike-800.jpg" srcset="/img/mountainbike-480.jpg 480w, /img/mountainbike-800.jpg 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw" width="800" height="1000" alt="Guy naast zijn mountainbike op een pad langs de kust, met de zee op de achtergrond" loading="lazy" decoding="async" style="object-position: 50% 70%">
+          </picture>
+          <figcaption>Op de mountainbike, langs de kust</figcaption>
+        </figure>
+        <figure class="s-gallery__slide" role="group" aria-roledescription="slide" aria-label="3 van 4">
+          <picture>
+            <source type="image/webp" srcset="/img/paqo-480.webp 480w, /img/paqo-800.webp 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw">
+            <img src="/img/paqo-800.jpg" srcset="/img/paqo-480.jpg 480w, /img/paqo-800.jpg 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw" width="800" height="1000" alt="Guy met Paqo, het paard van zijn vrouw, in een zandbak omringd door bomen" loading="lazy" decoding="async" style="object-position: 50% 55%">
+          </picture>
+          <figcaption>Met Paqo, het paard van mijn vrouw</figcaption>
+        </figure>
+        <figure class="s-gallery__slide" role="group" aria-roledescription="slide" aria-label="4 van 4">
+          <picture>
+            <source type="image/webp" srcset="/img/diner-480.webp 480w, /img/diner-800.webp 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw">
+            <img src="/img/diner-800.jpg" srcset="/img/diner-480.jpg 480w, /img/diner-800.jpg 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw" width="800" height="1000" alt="Guy en zijn vrouw aan een feestelijk gedekte tafel met bloemen en kaarslicht" loading="lazy" decoding="async" style="object-position: 50% 30%">
+          </picture>
+          <figcaption>Aan tafel met mijn vrouw</figcaption>
+        </figure>
+      </div>
+      <div class="s-gallery__nav" hidden>
+        <button type="button" class="s-gallery__btn s-gallery__btn--prev" data-gallery-prev aria-label="Vorige foto">{{icon:chevron-right:20}}</button>
+        <span class="s-gallery__count" aria-hidden="true"><span data-gallery-index>1</span>&nbsp;/&nbsp;4</span>
+        <button type="button" class="s-gallery__btn" data-gallery-next aria-label="Volgende foto">{{icon:chevron-right:20}}</button>
+      </div>
+    </div>
     <ul class="s-interests">
       <li class="s-interest"><p class="g-label s-interest__label">Hardlopen en fietsen</p><p class="s-interest__title">Twee keer de marathon van Rotterdam</p></li>
       <li class="s-interest"><p class="g-label s-interest__label">Tennis</p><p class="s-interest__title">Van mijn achtste tot mijn veertiende op hoog niveau. Daar leerde ik doorzetten.</p></li>
