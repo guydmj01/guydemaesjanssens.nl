@@ -6,6 +6,7 @@ One-page site: resume, consulting offer, personal interests and contact. Built o
 
 - Copy lives in `src/index.html`. Page layout CSS in `src/site.css`, behaviour (menu, theme toggle, route animation) in `src/site.js`.
 - `{{contours:…}}`, `{{icon:name:size}}`, `{{monogram:size}}` and `{{year}}` are filled in at build time from the design system.
+- **IT terms:** write `{{term:key}}` or `{{term:key|shown text}}`. The plain-language explanation comes from `src/glossary.json` and opens on hover, tap and keyboard focus. The build stops with an error if a key is missing, so add new terms to the glossary first.
 - Build into `docs/` (no dependencies, Node 18+):
 
 ```bash
@@ -24,6 +25,6 @@ python3 -m http.server 4173 --directory docs
 
 - Start date of the Rabobank role (shown as "2024 – now", estimated from "2.5 years").
 - Earlier roles: innovation lead, product development, and anything before Rabobank.
-- LinkedIn URL, portrait, education/certifications.
+- Portrait photo (Guy will supply). No LinkedIn link: this site replaces it. Certifications are on the tech-lead page.
 - Dutch version (the design system defaults to NL).
 - OG/social image and a privacy statement.

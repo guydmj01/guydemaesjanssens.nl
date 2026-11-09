@@ -1,6 +1,9 @@
 // Mobile menu, theme toggle and the services route animation. The page works without this file.
 (function () {
   var root = document.documentElement;
+  var L = root.lang === 'nl'
+    ? { toDark: 'Donkere weergave', toLight: 'Lichte weergave', menu: 'Menu', close: 'Sluiten' }
+    : { toDark: 'Dark mode', toLight: 'Light mode', menu: 'Menu', close: 'Close' };
 
   // Theme: follows the system until the visitor picks one; the choice is remembered.
   function isDark() {
@@ -11,9 +14,9 @@
   function syncThemeButtons() {
     var dark = isDark();
     document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
-      b.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
       var l = b.querySelector('[data-theme-label]');
-      if (l) l.textContent = dark ? 'Light mode' : 'Dark mode';
+      if (l) { l.textContent = dark ? L.toLight : L.toDark; b.removeAttribute('aria-label'); }
+      else b.setAttribute('aria-label', dark ? L.toLight : L.toDark);
     });
   }
   document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
@@ -34,7 +37,7 @@
   function setOpen(open) {
     header.classList.toggle('g-header--open', open);
     btn.setAttribute('aria-expanded', String(open));
-    btn.querySelector('[data-menu-label]').textContent = open ? 'Close' : 'Menu';
+    btn.querySelector('[data-menu-label]').textContent = open ? L.close : L.menu;
     panel.hidden = !open;
   }
   if (btn && panel) {
@@ -42,6 +45,40 @@
     panel.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) { setOpen(false); btn.focus(); } });
   }
+
+  // IT terms: keep the explanation on screen (shift sideways, flip above when there's no room
+  // below), open on tap for touch screens, close with Escape or a tap elsewhere.
+  var terms = Array.prototype.slice.call(document.querySelectorAll('.s-term'));
+  function place(t) {
+    var tip = t.querySelector('.s-term__tip');
+    t.style.setProperty('--term-shift', '0px');
+    t.classList.remove('s-term--up');
+    var r = tip.getBoundingClientRect(), m = 16, shift = 0;
+    if (r.left < m) shift = m - r.left;
+    else if (r.right > innerWidth - m) shift = innerWidth - m - r.right;
+    t.style.setProperty('--term-shift', shift + 'px');
+    if (r.bottom > innerHeight - m && t.getBoundingClientRect().top > r.height + 24) t.classList.add('s-term--up');
+  }
+  function closeAll(except) { terms.forEach(function (t) { if (t !== except) t.classList.remove('is-open'); }); }
+  terms.forEach(function (t) {
+    var b = t.querySelector('.s-term__btn');
+    t.addEventListener('mouseenter', function () { place(t); });
+    b.addEventListener('focus', function () { place(t); });
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !t.classList.contains('is-open');
+      closeAll(t);
+      t.classList.toggle('is-open', open);
+      if (open) place(t);
+    });
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.s-term')) closeAll(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var open = document.querySelector('.s-term.is-open, .s-term:focus-within');
+    closeAll();
+    if (open && document.activeElement && open.contains(document.activeElement)) document.activeElement.blur();
+  });
 
   // Services route: draw the clay line once when it scrolls into view.
   var route = document.querySelector('[data-route]');

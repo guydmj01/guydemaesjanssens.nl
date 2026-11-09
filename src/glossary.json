@@ -1,0 +1,172 @@
+{
+  "_readme": "Plain-language explanations for IT terms. In a page use {{term:key}} (shows the label in the page's language) or {{term:key|shown text}}. Write for a smart reader who has never worked in IT: one or two short sentences, no other jargon. Every term needs both 'en' and 'nl'.",
+
+  "agile": {
+    "en": { "label": "agile", "text": "A way of working in small steps with frequent feedback, instead of making one big plan up front and delivering everything at the end." },
+    "nl": { "label": "agile", "text": "Werken in kleine stappen met vaak feedback, in plaats van vooraf één groot plan te maken en alles pas aan het eind op te leveren." }
+  },
+  "agentic-ai": {
+    "en": { "label": "agentic AI", "text": "AI that doesn't just answer a question but carries out a series of steps on its own, like an assistant that can also act." },
+    "nl": { "label": "agentic AI", "text": "AI die niet alleen een vraag beantwoordt, maar zelf een reeks stappen uitvoert. Een assistent die ook iets dóét." }
+  },
+  "automation": {
+    "en": { "label": "automation", "text": "Letting computers do repetitive work that people used to do by hand, so it's faster and done the same way every time." },
+    "nl": { "label": "automatisering", "text": "Computers het herhalende werk laten doen dat mensen eerst met de hand deden. Sneller, en elke keer op dezelfde manier." }
+  },
+  "azure-virtual-desktop": {
+    "en": { "label": "Azure Virtual Desktop", "text": "Microsoft's service for running virtual desktops in its own cloud (called Azure)." },
+    "nl": { "label": "Azure Virtual Desktop", "text": "De dienst van Microsoft om virtuele werkplekken te draaien in de eigen cloud van Microsoft (Azure)." }
+  },
+  "cloud": {
+    "en": { "label": "cloud", "text": "Computing power and storage rented from a provider like Microsoft, Amazon or Google, instead of servers in your own building." },
+    "nl": { "label": "cloud", "text": "Rekenkracht en opslag die u huurt bij een aanbieder als Microsoft, Amazon of Google, in plaats van servers in uw eigen pand." }
+  },
+  "cloud-agnostic": {
+    "en": { "label": "cloud-agnostic", "text": "Built so it can run at any cloud provider. If prices or terms change you can move, so you're never stuck with one supplier." },
+    "nl": { "label": "cloud-onafhankelijk", "text": "Zo gebouwd dat het bij elke cloudaanbieder kan draaien. Veranderen de prijs of de voorwaarden, dan kunt u verhuizen. U zit nooit vast aan één leverancier." }
+  },
+  "continuity": {
+    "en": { "label": "continuity", "text": "Making sure the business keeps running during and after a disruption, such as an outage, a power cut or a cyberattack." },
+    "nl": { "label": "continuïteit", "text": "Zorgen dat het bedrijf blijft draaien tijdens en na een verstoring, zoals een storing, stroomuitval of cyberaanval." }
+  },
+  "developer-experience": {
+    "en": { "label": "developer experience", "text": "How easy it is for programmers to do their work. Fewer obstacles means faster, better software." },
+    "nl": { "label": "developer experience", "text": "Hoe makkelijk programmeurs hun werk kunnen doen. Minder obstakels betekent snellere en betere software." }
+  },
+  "devops-team": {
+    "en": { "label": "DevOps teams", "text": "Teams that both build software and keep it running. No hand-over to a separate department: the same people own it from start to finish." },
+    "nl": { "label": "DevOps-teams", "text": "Teams die software zowel bouwen als draaiende houden. Geen overdracht aan een andere afdeling: dezelfde mensen zijn eigenaar, van begin tot eind." }
+  },
+  "devsecops": {
+    "en": { "label": "DevSecOps", "text": "DevOps with security built in from day one by the team itself, instead of a security check at the very end." },
+    "nl": { "label": "DevSecOps", "text": "DevOps waarbij het team zelf vanaf dag één beveiliging inbouwt, in plaats van een beveiligingscontrole helemaal aan het eind." }
+  },
+  "fractional-cto": {
+    "en": { "label": "fractional CTO", "text": "A part-time head of technology. For a few days a month you get the experience of a senior IT director, without hiring one full-time." },
+    "nl": { "label": "fractional CTO", "text": "Een parttime IT-directeur. Een paar dagen per maand heeft u de ervaring van een senior IT-bestuurder, zonder er fulltime een aan te nemen." }
+  },
+  "frontend": {
+    "en": { "label": "frontend", "text": "The part of software you see and click on, like the screens of a banking app. The machinery behind it is the 'backend'." },
+    "nl": { "label": "frontend", "text": "Het deel van software dat u ziet en aanklikt, zoals de schermen van een bankapp. De machinerie erachter heet de 'backend'." }
+  },
+  "genai": {
+    "en": { "label": "GenAI", "text": "Generative AI: AI that writes new text, images or code, such as ChatGPT or Claude." },
+    "nl": { "label": "GenAI", "text": "Generatieve AI: AI die zelf nieuwe tekst, beelden of code maakt, zoals ChatGPT of Claude." }
+  },
+  "governance": {
+    "en": { "label": "technical governance", "text": "The agreements and checks that keep technology choices sound, safe and consistent across all teams." },
+    "nl": { "label": "technische governance", "text": "De afspraken en controles die ervoor zorgen dat technische keuzes verstandig, veilig en consistent zijn, over alle teams heen." }
+  },
+  "hardware": {
+    "en": { "label": "hardware", "text": "The physical equipment: laptops, screens, phones and the servers in data centres." },
+    "nl": { "label": "hardware", "text": "De fysieke apparatuur: laptops, schermen, telefoons en de servers in datacenters." }
+  },
+  "high-availability": {
+    "en": { "label": "high-availability", "text": "Systems built so they are almost never down, because customers depend on them day and night." },
+    "nl": { "label": "hoge beschikbaarheid", "text": "Systemen die zo zijn gebouwd dat ze vrijwel nooit uitvallen, omdat klanten er dag en nacht op rekenen." }
+  },
+  "infrastructure-as-code": {
+    "en": { "label": "in code", "text": "Servers, networks and settings described in text files that a computer carries out, instead of being set up by hand. The whole setup can be rebuilt exactly, anywhere, at any time." },
+    "nl": { "label": "in code", "text": "Servers, netwerken en instellingen vastgelegd in tekstbestanden die een computer uitvoert, in plaats van met de hand ingesteld. Het geheel is overal en altijd precies opnieuw op te bouwen." }
+  },
+  "internal-developer-platform": {
+    "en": { "label": "Internal Developer Platform", "text": "A one-stop shop for a company's own programmers: they get what they need (a server, a database, a test environment) themselves, in minutes, without filing a request." },
+    "nl": { "label": "Internal Developer Platform", "text": "Eén loket voor de eigen programmeurs van een bedrijf: ze regelen zelf wat ze nodig hebben (een server, een database, een testomgeving), binnen minuten en zonder aanvraag." }
+  },
+  "intune": {
+    "en": { "label": "Intune", "text": "Microsoft's tool for managing and securing a company's computers remotely: updates, settings and security rules, all from one place." },
+    "nl": { "label": "Intune", "text": "De tool van Microsoft om de computers van een bedrijf op afstand te beheren en te beveiligen: updates, instellingen en beveiligingsregels, vanaf één plek." }
+  },
+  "it-landscape": {
+    "en": { "label": "IT landscape", "text": "All the software, systems, suppliers and connections a company uses, and how they fit together." },
+    "nl": { "label": "IT-landschap", "text": "Alle software, systemen, leveranciers en koppelingen die een bedrijf gebruikt, en hoe die met elkaar samenhangen." }
+  },
+  "knowledge-distillation": {
+    "en": { "label": "trained a smaller model", "text": "Training a small, fast AI model by letting it learn from a big, slow one. Like an apprentice learning from a master." },
+    "nl": { "label": "een kleiner model getraind", "text": "Een klein, snel AI-model trainen door het te laten leren van een groot, traag model. Zoals een leerling die leert van een meester." }
+  },
+  "lifecycle-management": {
+    "en": { "label": "lifecycle management", "text": "Keeping software up to date over the years: updates, security fixes, and replacing what's outdated before it becomes a risk." },
+    "nl": { "label": "lifecyclemanagement", "text": "Software door de jaren heen actueel houden: updates, beveiligingsfixes, en vervangen wat verouderd is voordat het een risico wordt." }
+  },
+  "local-ai": {
+    "en": { "label": "local AI", "text": "AI models that run on your own computers instead of at a cloud provider. Your data never leaves the building." },
+    "nl": { "label": "lokale AI", "text": "AI-modellen die op uw eigen computers draaien in plaats van bij een cloudaanbieder. Uw gegevens verlaten het pand niet." }
+  },
+  "platform": {
+    "en": { "label": "platform", "text": "The shared foundation of tools, building blocks and rules that software teams build on. Like a well-equipped workshop everyone can use." },
+    "nl": { "label": "platform", "text": "Het gedeelde fundament van gereedschap, bouwstenen en afspraken waar softwareteams op bouwen. Een goed ingerichte werkplaats die iedereen kan gebruiken." }
+  },
+  "platform-engineering": {
+    "en": { "label": "platform engineering", "text": "Building the shared foundation other software teams build on (tools, servers, standard building blocks), so each team doesn't have to set it all up again." },
+    "nl": { "label": "platform engineering", "text": "Het gedeelde fundament bouwen waar andere softwareteams op bouwen (gereedschap, servers, standaardbouwstenen), zodat niet elk team dat zelf opnieuw hoeft in te richten." }
+  },
+  "pose-model": {
+    "en": { "label": "pose model", "text": "AI that recognises a person's posture in a photo or video, as a stick figure of joints and limbs." },
+    "nl": { "label": "pose-model", "text": "AI die de houding van een persoon herkent in een foto of video, als een poppetje van gewrichten en ledematen." }
+  },
+  "resilience": {
+    "en": { "label": "resilience", "text": "The ability of systems to keep working, or recover quickly, when something goes wrong." },
+    "nl": { "label": "weerbaarheid", "text": "Het vermogen van systemen om te blijven werken, of snel te herstellen, als er iets misgaat." }
+  },
+  "scrum-master": {
+    "en": { "label": "scrum master", "text": "A coach for a team that works in short cycles of a few weeks. They keep the way of working on track and clear away what slows the team down. They don't manage the work itself." },
+    "nl": { "label": "scrum master", "text": "Een coach voor een team dat in korte cycli van een paar weken werkt. Bewaakt de werkwijze en ruimt op wat het team ophoudt. Stuurt niet op het werk zelf." }
+  },
+  "sdlc": {
+    "en": { "label": "SDLC", "text": "Software development lifecycle: every step software goes through, from idea to design, building, testing, release and maintenance." },
+    "nl": { "label": "SDLC", "text": "Software development lifecycle: alle stappen die software doorloopt, van idee via ontwerp, bouwen en testen tot livegang en onderhoud." }
+  },
+  "self-service": {
+    "en": { "label": "self-service", "text": "People get what they need themselves, straight away, instead of asking another team and waiting." },
+    "nl": { "label": "selfservice", "text": "Mensen regelen zelf wat ze nodig hebben, direct, in plaats van het aan een ander team te vragen en te wachten." }
+  },
+  "service-desk": {
+    "en": { "label": "service desk", "text": "The IT help desk: the people employees call when their computer or software doesn't work." },
+    "nl": { "label": "servicedesk", "text": "De IT-helpdesk: de mensen die medewerkers bellen als hun computer of software het niet doet." }
+  },
+  "squad": {
+    "en": { "label": "squad", "text": "A small, permanent team (usually 5 to 9 people) that owns one part of the technology from start to finish." },
+    "nl": { "label": "squad", "text": "Een klein, vast team (meestal 5 tot 9 mensen) dat eigenaar is van één deel van de techniek, van begin tot eind." }
+  },
+  "tech-lead": {
+    "en": { "label": "tech lead", "text": "The person responsible for the technical direction and quality of one or more teams, and for the people in them." },
+    "nl": { "label": "tech lead", "text": "Verantwoordelijk voor de technische koers en kwaliteit van een of meer teams, en voor de mensen in die teams." }
+  },
+  "technical-risk": {
+    "en": { "label": "technical risk", "text": "The chance that technology causes a problem: an outage, a security hole, or a system nobody can maintain any more." },
+    "nl": { "label": "technisch risico", "text": "De kans dat techniek een probleem veroorzaakt: een storing, een beveiligingslek, of een systeem dat niemand meer kan onderhouden." }
+  },
+  "vendor-lock-in": {
+    "en": { "label": "vendor lock-in", "text": "Being so dependent on one supplier that leaving is expensive or nearly impossible." },
+    "nl": { "label": "vendor lock-in", "text": "Zo afhankelijk zijn van één leverancier dat vertrekken duur of bijna onmogelijk is." }
+  },
+  "virtual-desktop": {
+    "en": { "label": "virtual desktop", "text": "A computer desktop that runs in a data centre or the cloud instead of on your own machine. You can use it from any device; the work happens elsewhere." },
+    "nl": { "label": "virtuele werkplek", "text": "Een computerbureaublad dat in een datacenter of de cloud draait in plaats van op uw eigen apparaat. U werkt er vanaf elk apparaat op; het rekenwerk gebeurt elders." }
+  },
+  "waterfall": {
+    "en": { "label": "waterfall", "text": "The traditional way of running projects: plan everything first, then build, then test, then deliver, one phase after the other." },
+    "nl": { "label": "watervalmethode", "text": "De traditionele manier van projecten: eerst alles plannen, dan bouwen, dan testen, dan opleveren. Fase na fase." }
+  },
+  "devops": {
+    "en": { "label": "DevOps", "text": "A way of working where the people who build software also keep it running, so there is no hand-over between departments." },
+    "nl": { "label": "DevOps", "text": "Een werkwijze waarbij de mensen die software bouwen die ook draaiende houden, zodat er geen overdracht tussen afdelingen is." }
+  },
+  "evidence-based-management": {
+    "en": { "label": "Evidence-Based Management", "text": "Steering on measured results, such as customer value and speed of delivery, instead of on gut feeling or how busy everyone looks." },
+    "nl": { "label": "Evidence-Based Management", "text": "Sturen op gemeten resultaat, zoals waarde voor de klant en snelheid van leveren, in plaats van op gevoel of op hoe druk iedereen lijkt." }
+  },
+  "itil": {
+    "en": { "label": "ITIL", "text": "A widely used handbook for running IT as a service: how you handle incidents, changes and requests so users get dependable help." },
+    "nl": { "label": "ITIL", "text": "Een veelgebruikt handboek om IT als dienst te organiseren: hoe je storingen, wijzigingen en verzoeken afhandelt, zodat gebruikers op hun hulp kunnen rekenen." }
+  },
+  "safe": {
+    "en": { "label": "SAFe", "text": "A framework for working agile with many teams at once in a large organisation, so they plan and deliver in step with each other." },
+    "nl": { "label": "SAFe", "text": "Een raamwerk om in een grote organisatie met veel teams tegelijk agile te werken, zodat ze in hetzelfde ritme plannen en opleveren." }
+  },
+  "scrum": {
+    "en": { "label": "Scrum", "text": "The most widely used agile method: a team delivers something usable every few weeks, then looks back at what to improve." },
+    "nl": { "label": "Scrum", "text": "De meest gebruikte agile methode: een team levert om de paar weken iets bruikbaars op en kijkt daarna wat beter kan." }
+  }
+}
