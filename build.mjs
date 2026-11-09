@@ -7,6 +7,7 @@
 // are copied or inlined at build time.
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, rmSync, readdirSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -73,6 +74,9 @@ for (const f of readdirSync(join(DS, 'fonts'))) copyFileSync(join(DS, 'fonts', f
 for (const f of ['favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png'])
   copyFileSync(join(DS, 'assets/brand', f), join(OUT, f));
 copyFileSync(join(SRC, 'site.js'), join(OUT, 'js/site.js'));
+// Version stamps so browsers never combine a new page with a cached old stylesheet or script.
+const stamp = (f) => createHash('sha256').update(readFileSync(join(OUT, f))).digest('hex').slice(0, 10);
+const CSS_V = stamp('css/site.css'), JS_V = stamp('js/site.js');
 mkdirSync(join(OUT, 'img'), { recursive: true });
 for (const f of readdirSync(join(SRC, 'img'))) copyFileSync(join(SRC, 'img', f), join(OUT, 'img', f));
 
@@ -235,7 +239,7 @@ ${alt}
 <link rel="preload" href="/fonts/Newsreader-normal-200-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/InstrumentSans-normal-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>try{var m=localStorage.getItem('gdmj-theme');if(m==='light'||m==='dark')document.documentElement.dataset.theme=m}catch(e){}</script>
-<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/site.css?v=${CSS_V}">
 </head>
 <body>
 ${header(key, lang)}
@@ -243,7 +247,7 @@ ${header(key, lang)}
 ${body}
 </main>
 ${footer(lang)}
-<script src="/js/site.js" defer></script>
+<script src="/js/site.js?v=${JS_V}" defer></script>
 </body>
 </html>
 `;

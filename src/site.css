@@ -177,29 +177,35 @@ section[id] { scroll-margin-top: 8px; }
 
 .s-nowrap { white-space: nowrap; }
 
-/* Photo gallery in "Beyond work": swipe or use the buttons. Without JS it is a plain swipeable strip. */
-.s-gallery { position: relative; display: flex; flex-direction: column; margin: 0 auto var(--space-6); max-width: 100%; border-radius: var(--radius-md); overflow: hidden; background: var(--color-raised); }
-@media (min-width: 600px) { .s-gallery { max-width: 420px; } }
-.s-gallery__track { flex: 1; min-height: 0; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
-.s-gallery__track::-webkit-scrollbar { display: none; }
-.s-gallery__track:focus-visible { outline-offset: -3px; }
-.s-gallery__slide { flex: 0 0 100%; display: flex; flex-direction: column; margin: 0; scroll-snap-align: start; }
-.s-gallery__slide picture { position: relative; display: block; aspect-ratio: 4 / 5; }
-.s-gallery__slide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.s-gallery__slide figcaption { display: flex; align-items: center; min-height: 3.25rem; padding: var(--space-2) var(--space-3); font-family: var(--font-mono); font-size: var(--text-small); color: var(--color-text-muted); background: var(--color-bg); }
-.s-gallery.is-ready .s-gallery__slide figcaption { padding-right: 9rem; }
-.s-gallery__nav { position: absolute; right: var(--space-2); bottom: 0; height: 3.25rem; display: flex; align-items: center; gap: var(--space-1); }
-.s-gallery__nav[hidden] { display: none; }
-.s-gallery__btn { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 1px solid var(--color-border-strong); border-radius: 999px; background: var(--color-surface); color: var(--color-text); cursor: pointer; }
-.s-gallery__btn:hover:not(:disabled) { background: var(--color-raised); }
-.s-gallery__btn:disabled { opacity: 0.35; cursor: default; }
-.s-gallery__btn--prev svg { transform: rotate(180deg); }
-.s-gallery__count { min-width: 3.25em; text-align: center; font-family: var(--font-mono); font-size: var(--text-small); color: var(--color-text-muted); }
-
-/* Desktop: gallery beside the interest tiles, same height */
-@media (min-width: 900px) {
-  .s-beyond { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-3); align-items: stretch; }
-  .s-beyond .s-gallery { margin: 0; max-width: none; }
-  .s-beyond .s-gallery__slide picture { flex: 1; aspect-ratio: auto; min-height: 340px; }
-  .s-beyond .s-interests { grid-template-columns: repeat(2, 1fr); }
+/* Photos in "Beyond work": four in a row on desktop, a swipeable row (next photo peeking in) below that. */
+.s-photos {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 78%; gap: var(--space-3);
+  margin: 0 calc(var(--gutter) * -1) var(--space-6); padding: 0 var(--gutter) var(--space-1);
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+  overscroll-behavior-x: contain; scrollbar-width: none;
 }
+.s-photos::-webkit-scrollbar { display: none; }
+.s-photos:focus-visible { outline-offset: 2px; }
+.s-photos__item { margin: 0; scroll-snap-align: start; min-width: 0; }
+.s-photos__item picture { display: block; aspect-ratio: 4 / 5; border-radius: var(--radius-md); overflow: hidden; background: var(--color-raised); }
+.s-photos__item img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.s-photos__item figcaption { margin-top: var(--space-2); font-family: var(--font-mono); font-size: var(--text-small); line-height: 1.4; color: var(--color-text-muted); }
+@media (min-width: 600px) { .s-photos { grid-auto-columns: 44%; } }
+@media (min-width: 900px) {
+  .s-photos { grid-auto-flow: row; grid-template-columns: repeat(4, 1fr); margin-inline: 0; padding: 0; overflow: visible; }
+}
+
+/* Auto-scrolling photo strip (set up by site.js; skipped when the visitor prefers reduced motion). */
+.s-photos.is-marquee { display: block; overflow: hidden; margin: 0 0 var(--space-3); padding: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); }
+.s-photos__track { display: flex; width: max-content; animation: s-marquee var(--marquee-duration, 45s) linear infinite; will-change: transform; }
+.s-photos.is-marquee .s-photos__item { flex: 0 0 auto; width: clamp(220px, 26vw, 300px); padding-right: var(--space-3); }
+.s-photos.is-marquee:hover .s-photos__track,
+.s-photos.is-marquee:focus-within .s-photos__track,
+.s-photos.is-paused .s-photos__track { animation-play-state: paused; }
+@keyframes s-marquee { to { transform: translateX(-50%); } }
+.s-photos__controls { display: flex; justify-content: flex-end; margin: 0 0 var(--space-6); }
+.s-photos__controls[hidden] { display: none; }
+.s-photos__toggle { padding: var(--space-1) 0; border: 0; background: none; color: var(--color-text-muted); font-family: var(--font-mono); font-size: var(--text-small); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.s-photos__toggle:hover { color: var(--color-text); }

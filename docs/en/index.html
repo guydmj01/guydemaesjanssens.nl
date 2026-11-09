@@ -26,7 +26,7 @@
 <link rel="preload" href="/fonts/Newsreader-normal-200-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/InstrumentSans-normal-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>try{var m=localStorage.getItem('gdmj-theme');if(m==='light'||m==='dark')document.documentElement.dataset.theme=m}catch(e){}</script>
-<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/site.css?v=b3dae36670">
 </head>
 <body>
 <header class="g-header">
@@ -179,44 +179,37 @@
         <p class="g-section-heading__intro">I live in Rotterdam with my wife and our dog, Loki. Competitive, and happiest when moving.</p>
       </div>
     </div>
-    <div class="s-beyond">
-    <div class="s-gallery" data-gallery role="region" aria-roledescription="carousel" aria-label="Photos">
-      <div class="s-gallery__track" tabindex="0">
-        <figure class="s-gallery__slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
-          <picture>
-            <source type="image/webp" srcset="/img/arran-480.webp 480w, /img/arran-800.webp 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw">
-            <img src="/img/arran-800.jpg" srcset="/img/arran-480.jpg 480w, /img/arran-800.jpg 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw" width="800" height="1000" alt="Guy with Loki, our dog, on a rocky summit on the Isle of Arran, with the sea and clouds behind" loading="eager" decoding="async" style="object-position: 50% 50%">
-          </picture>
-          <figcaption>With Loki on the Isle of Arran, Scotland</figcaption>
-        </figure>
-        <figure class="s-gallery__slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
-          <picture>
-            <source type="image/webp" srcset="/img/mountainbike-480.webp 480w, /img/mountainbike-800.webp 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw">
-            <img src="/img/mountainbike-800.jpg" srcset="/img/mountainbike-480.jpg 480w, /img/mountainbike-800.jpg 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw" width="800" height="1000" alt="Guy beside his mountain bike on a coastal path, with the sea behind" loading="lazy" decoding="async" style="object-position: 50% 70%">
-          </picture>
-          <figcaption>Mountain biking along the coast</figcaption>
-        </figure>
-        <figure class="s-gallery__slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
-          <picture>
-            <source type="image/webp" srcset="/img/paqo-480.webp 480w, /img/paqo-800.webp 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw">
-            <img src="/img/paqo-800.jpg" srcset="/img/paqo-480.jpg 480w, /img/paqo-800.jpg 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw" width="800" height="1000" alt="Guy with Paqo, his wife's horse, in a sand arena surrounded by trees" loading="lazy" decoding="async" style="object-position: 50% 55%">
-          </picture>
-          <figcaption>With Paqo, my wife's horse</figcaption>
-        </figure>
-        <figure class="s-gallery__slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
-          <picture>
-            <source type="image/webp" srcset="/img/diner-480.webp 480w, /img/diner-800.webp 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw">
-            <img src="/img/diner-800.jpg" srcset="/img/diner-480.jpg 480w, /img/diner-800.jpg 800w" sizes="(min-width: 900px) 480px, (min-width: 600px) 520px, 100vw" width="800" height="1000" alt="Guy and his wife at a festive table with flowers and candlelight" loading="lazy" decoding="async" style="object-position: 50% 30%">
-          </picture>
-          <figcaption>At the table with my wife</figcaption>
-        </figure>
-      </div>
-      <div class="s-gallery__nav" hidden>
-        <button type="button" class="s-gallery__btn s-gallery__btn--prev" data-gallery-prev aria-label="Previous photo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6" /></svg></button>
-        <span class="s-gallery__count" aria-hidden="true"><span data-gallery-index>1</span>&nbsp;/&nbsp;4</span>
-        <button type="button" class="s-gallery__btn" data-gallery-next aria-label="Next photo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6" /></svg></button>
-      </div>
+    <div class="s-photos" data-photos role="region" aria-label="Photos" tabindex="0">
+      <figure class="s-photos__item">
+        <picture>
+          <source type="image/webp" srcset="/img/arran-480.webp 480w, /img/arran-800.webp 800w" sizes="(min-width: 1200px) 280px, (min-width: 900px) 23vw, (min-width: 600px) 44vw, 80vw">
+          <img src="/img/arran-800.jpg" srcset="/img/arran-480.jpg 480w, /img/arran-800.jpg 800w" sizes="(min-width: 1200px) 280px, (min-width: 900px) 23vw, (min-width: 600px) 44vw, 80vw" width="800" height="1000" alt="Guy with Loki, our dog, on a rocky summit on the Isle of Arran, with the sea and clouds behind" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>With Loki on the Isle of Arran, Scotland</figcaption>
+      </figure>
+      <figure class="s-photos__item">
+        <picture>
+          <source type="image/webp" srcset="/img/mountainbike-480.webp 480w, /img/mountainbike-800.webp 800w" sizes="(min-width: 1200px) 280px, (min-width: 900px) 23vw, (min-width: 600px) 44vw, 80vw">
+          <img src="/img/mountainbike-800.jpg" srcset="/img/mountainbike-480.jpg 480w, /img/mountainbike-800.jpg 800w" sizes="(min-width: 1200px) 280px, (min-width: 900px) 23vw, (min-width: 600px) 44vw, 80vw" width="800" height="1000" alt="Guy beside his mountain bike on a coastal path, with the sea behind" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>Mountain biking along the coast</figcaption>
+      </figure>
+      <figure class="s-photos__item">
+        <picture>
+          <source type="image/webp" srcset="/img/paqo-480.webp 480w, /img/paqo-800.webp 800w" sizes="(min-width: 1200px) 280px, (min-width: 900px) 23vw, (min-width: 600px) 44vw, 80vw">
+          <img src="/img/paqo-800.jpg" srcset="/img/paqo-480.jpg 480w, /img/paqo-800.jpg 800w" sizes="(min-width: 1200px) 280px, (min-width: 900px) 23vw, (min-width: 600px) 44vw, 80vw" width="800" height="1000" alt="Guy with Paqo, his wife's horse, in a sand arena surrounded by trees" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>With Paqo, my wife's horse</figcaption>
+      </figure>
+      <figure class="s-photos__item">
+        <picture>
+          <source type="image/webp" srcset="/img/diner-480.webp 480w, /img/diner-800.webp 800w" sizes="(min-width: 1200px) 280px, (min-width: 900px) 23vw, (min-width: 600px) 44vw, 80vw">
+          <img src="/img/diner-800.jpg" srcset="/img/diner-480.jpg 480w, /img/diner-800.jpg 800w" sizes="(min-width: 1200px) 280px, (min-width: 900px) 23vw, (min-width: 600px) 44vw, 80vw" width="800" height="1000" alt="Guy and his wife at a festive table with flowers and candlelight" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>At the table with my wife</figcaption>
+      </figure>
     </div>
+    <p class="s-photos__controls" hidden><button type="button" class="s-photos__toggle" data-photos-toggle data-label-pause="Pause photos" data-label-play="Play photos" aria-pressed="false">Pause photos</button></p>
     <ul class="s-interests">
       <li class="s-interest"><p class="g-label s-interest__label">Running and cycling</p><p class="s-interest__title">Ran the Rotterdam Marathon twice</p></li>
       <li class="s-interest"><p class="g-label s-interest__label">Tennis</p><p class="s-interest__title">Played at a high level from age 8 to about 14. That's where I learned to push through.</p></li>
@@ -225,7 +218,6 @@
       <li class="s-interest"><p class="g-label s-interest__label">At home</p><p class="s-interest__title">Home automation and energy: our house is my test lab</p></li>
       <li class="s-interest"><p class="g-label s-interest__label">AI</p><p class="s-interest__title">My own AI lab, no cloud</p></li>
     </ul>
-    </div>
   </div>
 </section>
 
@@ -276,6 +268,6 @@
     </div>
   </div>
 </footer>
-<script src="/js/site.js" defer></script>
+<script src="/js/site.js?v=6659f6140f" defer></script>
 </body>
 </html>
