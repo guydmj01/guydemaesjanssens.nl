@@ -73,6 +73,8 @@ for (const f of readdirSync(join(DS, 'fonts'))) copyFileSync(join(DS, 'fonts', f
 for (const f of ['favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png'])
   copyFileSync(join(DS, 'assets/brand', f), join(OUT, f));
 copyFileSync(join(SRC, 'site.js'), join(OUT, 'js/site.js'));
+mkdirSync(join(OUT, 'img'), { recursive: true });
+for (const f of readdirSync(join(SRC, 'img'))) copyFileSync(join(SRC, 'img', f), join(OUT, 'img', f));
 
 // ---------- building blocks ----------
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -114,6 +116,8 @@ function term(spec, lang) {
 }
 
 function expand(html, lang) {
+  // Keep punctuation right after a term on the same line as the term.
+  html = html.replace(/(\{\{term:[^}]+\}\})([,.;:!?)]+)/g, '<span class="s-nowrap">$1$2</span>');
   return html.replace(/\{\{([^}]+)\}\}/g, (_, tag) => {
     const [kind, ...a] = tag.split(':');
     switch (kind) {
@@ -220,6 +224,11 @@ ${alt}
 <meta property="og:title" content="${esc(meta.title)}">
 <meta property="og:description" content="${esc(meta.description)}">
 <meta property="og:locale" content="${lang === 'nl' ? 'nl_NL' : 'en_GB'}">
+<meta property="og:image" content="${SITE.domain}/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${lang === 'nl' ? 'Guy de Maes Janssens met zijn hond op het Isle of Arran' : 'Guy de Maes Janssens with his dog on the Isle of Arran'}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
