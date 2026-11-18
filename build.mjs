@@ -264,6 +264,6 @@ for (const key of Object.keys(PAGES)) {
 }
 
 // GitHub Pages: custom domain, and serve files as-is (no Jekyll).
-writeFileSync(join(OUT, 'CNAME'), 'www.guydemaesjanssens.nl\n');
+writeFileSync(join(OUT, 'CNAME'), 'www.guydemaesjanssens.nl' /* no newline: matches the file GitHub writes */);
 writeFileSync(join(OUT, '.nojekyll'), '');
 console.log(`Built ${count} pages into`, OUT);
